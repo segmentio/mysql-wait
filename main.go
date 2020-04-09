@@ -18,7 +18,7 @@ func main() {
 		password = flag.String("password", "", "")
 		dbname   = flag.String("dbname", "mysql", "")
 		sleep    = flag.Duration("sleep", time.Second, "")
-		timeout  = flag.Duration("timeout", 10*time.Second, "")
+		timeout  = flag.Duration("timeout", 30*time.Second, "")
 	)
 	flag.Parse()
 	done := make(chan struct{})
