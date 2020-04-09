@@ -20,7 +20,7 @@ The available options are:
 
 # example
 
-    curl -SsL https://github.com/segmentio/mysql-wait/releases/download/v0.0.2/mysql-wait -o mysql-wait
+    curl -OSsL https://github.com/segmentio/mysql-wait/releases/download/v0.0.2/mysql-wait
     chmod +x mysql-wait
     ./mysql-wait -timeout 60s
 
