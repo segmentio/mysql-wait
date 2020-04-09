@@ -16,7 +16,7 @@ func main() {
 		port     = flag.Int("port", 3306, "")
 		user     = flag.String("user", "root", "")
 		password = flag.String("password", "", "")
-		dbname   = flag.String("dbname", "", "")
+		dbname   = flag.String("dbname", "mysql", "")
 		sleep    = flag.Duration("sleep", time.Second, "")
 		timeout  = flag.Duration("timeout", 10*time.Second, "")
 	)
