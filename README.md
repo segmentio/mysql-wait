@@ -6,6 +6,7 @@ It is meant to be used in CI builds to ensure that mysql can respond to commands
 
 # example
 
-    curl -SsL https://github.com/segmentio/mysql-wait/releases/download/v0.0.2/mysql-wait -o mysql-wait && chmod +x mysql-wait
+    curl -SsL https://github.com/segmentio/mysql-wait/releases/download/v0.0.2/mysql-wait -o mysql-wait
+    chmod +x mysql-wait
     ./mysql-wait -timeout 60s -user root
 
