@@ -15,7 +15,8 @@ func main() {
 		host     = flag.String("host", "127.0.0.1", "")
 		port     = flag.Int("port", 3306, "")
 		user     = flag.String("user", "root", "")
-		password = flag.String("password", "pass", "")
+		password = flag.String("password", "", "")
+		dbname   = flag.String("dbname", "", "")
 		sleep    = flag.Duration("sleep", time.Second, "")
 		timeout  = flag.Duration("timeout", 10*time.Second, "")
 	)
@@ -25,7 +26,12 @@ func main() {
 		defer close(done)
 		for {
 			err := func() error {
-				dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/foo", *user, *password, *host, *port)
+				var dsn string
+				if *password == "" {
+					dsn = fmt.Sprintf("%s@tcp(%s:%d)/%s", *user, *host, *port, *dbname)
+				} else {
+					dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", *user, *password, *host, *port, *dbname)
+				}
 				db, err := sql.Open("mysql", dsn)
 				if err != nil {
 					return err
