@@ -1,4 +1,4 @@
-module mysql-wait
+module github.com/segmentio/mysql-wait
 
 go 1.13
 
